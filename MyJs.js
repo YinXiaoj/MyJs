@@ -1,7 +1,7 @@
 /**
  * JS常用工具集
  * author：yinxiaojing
- * PAI：
+ * api：https://github.com/YinXiaoj/MyJs
  */
 
 // 获取当前url
