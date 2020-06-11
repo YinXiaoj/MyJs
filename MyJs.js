@@ -332,3 +332,52 @@ function checkBrowser() {
     }
     return Object.keys(obj)[Object.values(obj).indexOf(true)]
 };
+
+//数组去重
+function unique(array) {
+    var res = [];
+    for (var i = 0; i < array.length; i++) {
+        var current = array[i];
+        if (res.indexOf(current) === -1) {
+            res.push(current)
+        }
+    }
+    return res;
+}
+// 数组去重，filter实现，indexOf返回第一个元素的位置
+// filter()接受一个函数，把传入的函数依次作用于每个元素，然后根据返回值是true还是false决定保留还是丢弃该元素
+// 参数：元素，位置，数组本身
+function unique2(array) {
+    var res = array.filter(function(item, index, array){
+        return array.indexOf(item) === index;
+    })
+    return res;
+}
+
+// 排序后去重
+function uniqueSort(array) {
+    var res = [];
+    //数组排序
+    var sortedArray = array.concat().sort();
+    var seen;
+    for (var i = 0; i < sortedArray.length; i++) {
+        // 如果是第一个元素或者相邻的元素不相同
+        if (!i || seen !== sortedArray[i]) {
+            res.push(sortedArray[i])
+        }
+        seen = sortedArray[i];
+    }
+    return res;
+}
+
+// 排序后去重，filter实现
+function uniqueSort2(array) {
+    return array.concat().sort().filter(function(item, index, array){
+        return !index || item !== array[index - 1]
+    })
+}
+
+// ES6实现
+var uniqueES = (a) => [...new Set(a)]
+
+

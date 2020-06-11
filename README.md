@@ -2,8 +2,14 @@
 
 ### 使用
 
-- 引入MyJs.js，然后直接调用接口，参考下面说明
-- MyJs.js中含有注释，可以自行查找，复制粘贴，按需使用
+- 引入MyJs.js，然后直接调用函数，参考下面说明
+- MyJs.js中含有注释，可以自行查找，按需使用，地址：[MyJs.js](MyJs.js)
+
+### 其他
+
+- css模块（待发布）
+- 前端开发规范：[前端开发规范.md](前端开发规范.md)
+
 
 ## 1. 浏览器相关
 
@@ -73,7 +79,7 @@ compareDate(d1, d2)
 
 - 设置几天后的日期
 ```js
-// date起始日期，day向后的天数，返回值格式为yyyy-mm-dd
+// date起始日期，day向后的天数，返回值格式为yyyy-mm-dd，day可为负数
 convertDate(date, day)
 ```
 
@@ -127,7 +133,29 @@ escapeHTML(str)
 
 - 判断数组是否存在某元素
 ```js
-arr.indexOf(str)
+array.indexOf(str)
+```
+
+- 数组去重
+
+```js
+unique(array)
+```
+
+- 数组排序并去重
+
+```js
+uniqueSort(array)
+```
+
+- 数组转化为json字符串
+```js
+JSON.stringify(array)
+```
+
+- json转化为数组
+```js
+JSON.parse(array)
 ```
 
 ## 5.设备相关
@@ -147,7 +175,20 @@ detectDeviceType()
 - 判断浏览器内核
 
 ```js
+// trident: IE内核, presto: opera内核, webKit:苹果、谷歌内核, gecko: 火狐内核
 checkBrowser()
+```
+
+## 6.正则表达式
+
+- 邮箱
+```js
+/^([A-Za-z0-9_\-\.\u4e00-\u9fa5])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,8})$/
+```
+
+- 手机号码
+```js
+/^1[345678]\d{9}$/
 ```
 
 ## 其他类型待完善
